@@ -97,3 +97,15 @@ body {
         height:250px;
         padding:5%;
     }
+
+#path5 {
+    stroke-dasharray: 3329.813720703125;
+    stroke-dashoffset: 3329.813720703125;
+    /*animation: sign 4s ease;*/
+    /*animation-fill-mode: forwards;*/
+}
+@keyframes sign{
+    to{
+        stroke-dashoffset: 0;
+    }
+}
