@@ -6,19 +6,12 @@ using System.Threading.Tasks;
 
 namespace CoffeeShop.Data
 {
-    public class Coffee
+    public class Ingredient
     {
         [Key]
         public int Id { get; set; }
         [Required]
-        [MaxLength(100)]
         public string Name { get; set; }
-        [Required]
-        [MaxLength(500)]
-        public string Description { get; set; }
-
-        public virtual ICollection<Rating> Ratings { get; set; }
         public IList<CoffeIngredient>  CoffeIngredients { get; set; }
-
     }
 }

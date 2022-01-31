@@ -23,7 +23,7 @@ namespace CoffeeShop.Pages
 
         public void OnGet()
         {
-            IndexCoffees = _db.Coffees.ToList();
+            IndexCoffees = _db.Coffees.OrderByDescending(x => x.Id).ToList();
         }
     }
 }
