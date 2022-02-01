@@ -1,0 +1,24 @@
+﻿@page
+@model CoffeeShop.Pages.CoffeeListModel
+@{
+}
+<h1 class="text-center">Nejzajímavější Kávy</h1>
+
+<div class="text-center flex-column">
+    @foreach (var item in Model.CoffeeList)
+    {
+        <a asp-page="RateCoffee" asp-route-id="@item.Id">
+            <div class="CardHolder">
+                <div class="text-center flex-row Card">
+                    <div><h5>@item.Name</h5></div>
+                    <img src="~/Images/JavaCoffe.png" />
+                    <div>@item.Description</div>
+                </div>
+
+            </div>
+        </a>
+
+
+    }
+</div>
+
