@@ -23,10 +23,18 @@ namespace CoffeeShop.Pages
         }
         public IActionResult OnPost()
         {
-            _db.Coffees.Add(Coffe);
-            _db.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                _db.Coffees.Add(Coffe);
+                _db.SaveChanges();
 
-            return RedirectToPage("Index");
+                return RedirectToPage("Index");
+            }
+            else
+            {
+                return Page();
+            }
+            
         }
     }
 }

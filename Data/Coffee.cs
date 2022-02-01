@@ -10,10 +10,10 @@ namespace CoffeeShop.Data
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Debílku Jméno je povinný")]
         [MaxLength(100)]
         public string Name { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Ale to musí mít popisek čtyřihlava")]
         [MaxLength(500)]
         public string Description { get; set; }
 

@@ -26,11 +26,19 @@ namespace CoffeeShop.Pages
         }
         public IActionResult OnPost()
         {
-            Rating.CoffeeId = Coffee.Id;
-            _db.Ratings.Add(Rating);
-            _db.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                Rating.CoffeeId = Coffee.Id;
+                _db.Ratings.Add(Rating);
+                _db.SaveChanges();
 
-            return RedirectToPage("RateCoffee", new { id = Coffee.Id });
+                return RedirectToPage("RateCoffee", new { id = Coffee.Id });
+            }
+            else
+            {
+                return Page();
+            }
+            
         }
     }
 }

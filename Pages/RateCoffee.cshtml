@@ -5,7 +5,7 @@
 <div class="text-center flex-column">
     <div class="flex-row">
         <div>
-            <img src="~/Images/JavaCoffe.png" />
+            <img src="~/Images/JavaCoffe.png" class="bg-dark" />
         </div>
         <div class="flex-column">
             @RateCoffeeModel.Coffee.Name
@@ -15,10 +15,14 @@
         </div>
     </div>
     <div>
+        <hr />
         <form method="post" class="text-center">
             <label>Nadpis</label><br />
             <input type="text" asp-for="@Model.Rating.Title" /><br />
+            <span class="text-danger" asp-validation-for="@Model.Rating.Title"></span><br />
+            <label> Váš Text</label><br />
             <textarea asp-for="@Model.Rating.Description"></textarea><br />
+            <span class="text-danger" asp-validation-for="@Model.Rating.Description"></span><br />
             <input type="submit" /><br />
         </form>
     </div>
@@ -32,3 +36,7 @@
         }
     </div>
 </div>
+
+@section Scripts{ 
+ <partial name="_ValidationScriptsPartial" />
+}

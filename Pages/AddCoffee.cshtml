@@ -8,8 +8,14 @@
     <form method="post" class="text-center flex-column">
         <label>Name</label><br />
         <input type="text" asp-for="@Model.Coffe.Name" /><br />
+        <span class="text-danger" asp-validation-for="@Model.Coffe.Name"></span><br />
         <label>Description</label><br />
         <textarea asp-for="@Model.Coffe.Description"></textarea><br />
-        <input type="submit"  class="bg-success"/><br />
+        <span class="text-danger" asp-validation-for="@Model.Coffe.Description"></span><br />
+        <input type="submit" class="bg-success" /><br />
     </form>
 </div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
