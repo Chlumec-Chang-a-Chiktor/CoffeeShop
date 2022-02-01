@@ -16,6 +16,7 @@
     </div>
     <div>
         <hr />
+        <h3>Recenze</h3>
         <form method="post" class="text-center">
             <label>Nadpis</label><br />
             <input type="text" asp-for="@Model.Rating.Title" /><br />
@@ -23,15 +24,21 @@
             <label> Váš Text</label><br />
             <textarea asp-for="@Model.Rating.Description"></textarea><br />
             <span class="text-danger" asp-validation-for="@Model.Rating.Description"></span><br />
+            <label>Bodové ohodnocení</label><br />
+            <input type="number" asp-for="@Model.Rating.Points" /><br />
+            <span class="text-danger" asp-validation-for="@Model.Rating.Points"></span><br />
             <input type="submit" /><br />
         </form>
     </div>
     <div class="flex-column">
         @foreach (var item in Model.IndexRatings)
         {
-            <div>
+            <div class="Rating">
                 <p>@item.Title</p>
                 <p>@item.Description</p>
+                 <p>Bodové ohodnocení: @item.Points/10</p>
+                
+                 
             </div>
         }
     </div>
