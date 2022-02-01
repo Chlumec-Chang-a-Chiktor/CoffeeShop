@@ -85,6 +85,8 @@ body {
     background: #000000;
     color:white;
     margin-top: 5%;
+    display: flex;
+    justify-content: space-evenly;
 }
 .CardHolder .Card{
     padding: 2%;
