@@ -11,19 +11,19 @@ namespace CoffeeShop.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly AplicationDbContext _db;
-        private readonly ILogger<IndexModel> _logger;
-        public List<Coffee> IndexCoffees { get; set; }
+        //private readonly AplicationDbContext _db;
+        //private readonly ILogger<IndexModel> _logger;
+        //public List<Coffee> IndexCoffees { get; set; }
 
-        public IndexModel(ILogger<IndexModel> logger, AplicationDbContext db)
-        {
-            _logger = logger;
-            _db = db;
-        }
+        //public IndexModel(ILogger<IndexModel> logger, AplicationDbContext db)
+        //{
+        //    _logger = logger;
+        //    _db = db;
+        //}
 
         public void OnGet()
         {
-            IndexCoffees = _db.Coffees.OrderByDescending(x => x.Id).ToList();
+            //IndexCoffees = _db.Coffees.OrderByDescending(x => x.Id).ToList();
         }
     }
 }
