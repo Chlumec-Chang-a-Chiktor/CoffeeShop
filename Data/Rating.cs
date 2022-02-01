@@ -20,7 +20,8 @@ namespace CoffeeShop.Data
         public int CoffeeId { get; set; }
         [ForeignKey("CoffeeId")]
         public Coffee Coffee { get; set; }
-        [Range(0,5)]
+        [Required]
+        [Range(0,10)]
         public int Points { get; set; }
     }
 }

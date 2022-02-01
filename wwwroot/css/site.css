@@ -109,3 +109,16 @@ body {
         stroke-dashoffset: 0;
     }
 }
+.Rating {
+    border: solid black 2px;
+    margin: auto;
+    margin-top: 5%;
+    text-align: left;
+    background-color: rgb(18 18 18);
+    color: white;
+    border: solid white 4px;
+    box-shadow: 10px 15px 0px #888888;
+}
+.Rating p{
+    padding: 1%;
+}
