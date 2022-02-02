@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
+    
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -36,14 +37,17 @@
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
+            <video autoplay muted loop id="background-video">
+                <source src="/videos/lofi-coffee-shop.mp4" type=video/mp4 />
+            </video>
         </main>
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - CoffeeShop - <a asp-area="" asp-page="/Privacy">Privacy</a>
-            <defs></defs>
-            @*<svg width="446" height="280" xmlns="http://www.w3.org/2000/svg" xmlns:undefined="http://www.paintersvg.com/namespace.html">
+            <div class="container">
+                &copy; 2022 - CoffeeShop - <a asp-area="" asp-page="/Privacy">Privacy</a>
+                <defs></defs>
+                @*<svg width="446" height="280" xmlns="http://www.w3.org/2000/svg" xmlns:undefined="http://www.paintersvg.com/namespace.html">
 
                 <g>
                     <title>Layer 1</title>
@@ -52,7 +56,7 @@
                     </g>
                 </g>
             </svg>*@
-        </div>
+            </div>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
