@@ -30,14 +30,40 @@
     <footer>
         <div class="title">©2022</div>
         <div class="buttons">
-            <button class="btn-modes">Stop motion</button>
-            <button class="btn-modes">Zoomer mode</button>
+            <button class="btn-modes" id="motionBtn" onclick="StopMotion()">Stop motion</button>
+            <button class="btn-modes" id="hiddenBtn" onclick="StartMotion()">Start motion</button>
+            <button class="btn-modes" onclick="ZoomerMode()">Zoomer mode</button>
         </div>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        let backgroundVideo = $("#background-video");
+        let hiddenBtn = $("#hiddenBtn");
+        let motionBtn = $("#motionBtn");
+
+        hiddenBtn.hide(0);
+
+        function StopMotion() {
+            backgroundVideo.get(0).pause();
+            hiddenBtn.show(0);
+            motionBtn.hide(0);
+        }
+
+        function StartMotion() {
+            backgroundVideo.get(0).play();
+            motionBtn.show(0);
+            hiddenBtn.hide(0);
+        }
+
+        function ZoomerMode() {
+            $("source").attr("src", "/videos/trolled.mp4");
+            $("video")[0].load(0);
+        }
+    </script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

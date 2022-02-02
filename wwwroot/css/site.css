@@ -41,6 +41,11 @@ footer {
 /*buttons with mode*/
 .btn-modes {
     border: none;
+    height: 30px;
+    width: 200px;
+    border-radius: 5px;
+    color: inherit;
+    background: rgba(0, 0, 0, 0.5);
 }
 /* Background lofi video*/
 #background-video {
