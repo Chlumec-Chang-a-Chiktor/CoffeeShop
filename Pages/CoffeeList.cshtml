@@ -4,21 +4,17 @@
 }
 <h1 class="text-center">Nejzajímavější Kávy</h1>
 
-<div class="text-center flex-column">
+<div class="CardHolder">
     @foreach (var item in Model.CoffeeList)
     {
-        <a asp-page="RateCoffee" asp-route-id="@item.Id">
-            <div class="CardHolder">
-                <div class="text-center flex-row Card">
+            <a asp-page="RateCoffee" asp-route-id="@item.Id" class="CardRedirect text-center">
+                <div class="InnerCard">
                     <div><h5>@item.Name</h5></div>
                     <img src="~/Images/JavaCoffe.png" />
-                    <div>@item.Description</div>
                 </div>
 
-            </div>
-        </a>
-
-
+            </a>
     }
+
 </div>
 
