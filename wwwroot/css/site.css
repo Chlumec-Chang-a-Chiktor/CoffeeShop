@@ -161,7 +161,6 @@ body {
 }
     .CardHolder .Card {
         padding: 2%;
-        /*border: solid pink 2px;*/
         width: 25%;
         margin: auto;
         background: rgba(18, 18, 18, 0.8);
@@ -177,17 +176,12 @@ body {
         text-decoration: none;
     }
 
-#path5 {
-    stroke-dasharray: 3329.813720703125;
-    stroke-dashoffset: 3329.813720703125;
-    /*animation: sign 4s ease;*/
-    /*animation-fill-mode: forwards;*/
-}
-@keyframes sign{
-    to{
-        stroke-dashoffset: 0;
+    .InnerCard i{
+        padding: 50px;
     }
-}
+
+
+
 .Rating {
     border: solid black 2px;
     margin: auto;
@@ -210,7 +204,6 @@ body {
 
 .CardHolder .CardRedirect {
     padding: 2%;
-    /*border: solid pink 2px;*/
     width: 25%;
     margin: auto;
     background: rgba(18, 18, 18, 0.8);
