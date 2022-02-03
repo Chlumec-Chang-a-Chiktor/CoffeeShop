@@ -6,10 +6,10 @@
 
 <div class="AddForm">
     <form method="post" class="text-center flex-column">
-        <label>Name</label><br />
+        <label>Pojmenuj si svojí kávu</label><br />
         <input type="text" asp-for="@Model.Coffe.Name" class="coffee-input" /><br />
         <span class="text-danger" asp-validation-for="@Model.Coffe.Name"></span><br />
-        <label>Description</label><br />
+        <label>Popis kávy</label><br />
         <textarea asp-for="@Model.Coffe.Description" class="coffee-input coffee-input-area"></textarea><br />
         <span class="text-danger" asp-validation-for="@Model.Coffe.Description"></span><br />
         <input type="submit" class="bg-success" /><br />

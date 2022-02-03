@@ -16,12 +16,12 @@ header, footer {
     color: white;
 }
 .title, .buttons {
-    margin-left: 5%;
+    margin-left: 2%;
     margin-top: 15px;
     margin-bottom: 15px;
 }
 .header-container {
-    margin-left: 5%;
+    margin-left: 2%;
     margin-top: 15px;
     margin-bottom: 15px;
 }
@@ -32,6 +32,7 @@ header, footer {
 }
 a:hover {
     background-color: black;
+    transition: 1s;
 }
 
 /* Footer */
@@ -56,6 +57,7 @@ footer {
 
     .btn-modes:hover {
         background-color: black;
+        transition: 1s;
     }
     /* Background lofi video*/
     #background-video {
@@ -154,7 +156,6 @@ body {
     /*box-shadow: 0px 0px 0px 8px #000000, 0px 0px 0px 16px #4B4C4B, 0px 0px 0px 24px #828482, 0px 0px 0px 31px #B2B5B2, 0px 0px 0px 39px #DADDDA, -6px 5px 5px 2px rgba(0,0,0,0);*/
     /*background: rgba(18, 18, 18, 0.8);*/
     color: white;
-    margin-top: 1%;
     display: flex;
     justify-content: space-evenly;
     opacity: 1;
@@ -223,10 +224,15 @@ body {
      padding: 5%;
 }
 
-.index-text {
+.text {
     padding: 5px;
     border-radius: 10px;
-    text-shadow: 2px 2px 2px black;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black;
     margin-top: 2%;
+}
+.text:hover {
+    background: rgba(18, 18, 18, 0.8);
+    transition: 1s;
 }
 

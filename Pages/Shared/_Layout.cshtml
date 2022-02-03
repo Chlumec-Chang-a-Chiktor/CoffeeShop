@@ -10,11 +10,11 @@
 </head>
 <body>
     <header>
-        <div class="title">Epický Coffee shop</div>
+        <div class="title">Epický Coffee obchod</div>
         <div class="header-container">
-            <a asp-area="" asp-page="/Index" >Home</a>
-            <a asp-area="" asp-page="/CoffeeList" >Coffee List</a>           
-            <a asp-area="" asp-page="/AddCoffee" >Add Coffee</a>
+            <a asp-area="" asp-page="/Index" >Domů</a>
+            <a asp-area="" asp-page="/CoffeeList" >Kávový List</a>           
+            <a asp-area="" asp-page="/AddCoffee" >Přidat kávu</a>
         </div>
     </header>
 
@@ -28,11 +28,13 @@
     </div>
 
     <footer>
-        <div class="title">©2022</div>
+        <div class="title">
+            Chlumec-Chang-a-Chiktor ©2022
+        </div>
         <div class="buttons">
-            <button class="btn-modes" id="motionBtn" onclick="StopMotion()">Stop motion</button>
-            <button class="btn-modes" id="hiddenBtn" onclick="StartMotion()">Start motion</button>
-            <button class="btn-modes" onclick="ZoomerMode()">Zoomer mode</button>
+            <button class="btn-modes" id="motionBtn" onclick="StopMotion()">Zastavit animaci</button>
+            <button class="btn-modes" id="hiddenBtn" onclick="StartMotion()">Spustit animaci</button>
+            <button class="btn-modes" onclick="ZoomerMode()">Zoomerský mód</button>
         </div>
     </footer>
 
