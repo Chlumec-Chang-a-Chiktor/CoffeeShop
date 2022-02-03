@@ -187,14 +187,12 @@ body {
 
 
 .Rating {
-    border: solid black 2px;
     margin: auto;
     margin-top: 5%;
     text-align: left;
-    background-color: rgb(18 18 18);
     color: white;
-    border: solid white 4px;
-    box-shadow: 10px 15px 0px #888888;
+    background: rgba(18, 18, 18, 0.8);
+    border-radius: 15px;
 }
 .Rating p{
     padding: 1%;
@@ -223,7 +221,7 @@ body {
      padding: 5%;
 }
 
-.text {
+.text, .rating-text {
     padding: 5px;
     border-radius: 10px;
     -webkit-text-stroke-width: 0.5px;
@@ -235,3 +233,6 @@ body {
     transition: 1s;
 }
 
+.rating-text {
+    background: rgba(18, 18, 18, 0.8);
+}

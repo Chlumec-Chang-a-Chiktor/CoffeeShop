@@ -7,16 +7,26 @@
         <div>
             <img src="~/Images/JavaCoffe.png" class="bg-dark" />
         </div>
-        <div class="flex-column">
-            @RateCoffeeModel.Coffee.Name
+        <div class="rating-text">
+            <div class="flex-column">
+                <h3>@RateCoffeeModel.Coffee.Name</h3>
+            </div>
+            <div>
+                <h5>
+                    Popis: <br />
+                    @RateCoffeeModel.Coffee.Description
+                </h5>
+            </div>
         </div>
-        <div>
-            @RateCoffeeModel.Coffee.Description
-        </div>
-    </div>
+    </div><br />
+
+    <input type="submit" name="pickCoffee" value="Vybrat kávu" />
+
     <div>
         <hr />
-        <h3>Recenze</h3>
+        <div class="rating-text">
+            <h3>Ohodnoťte tuto kávu:</h3>
+        </div>
         <form method="post" class="text-center">
             <label>Nadpis</label><br />
             <input type="text" asp-for="@Model.Rating.Title" /><br />
@@ -30,15 +40,22 @@
             <input type="submit" /><br />
         </form>
     </div>
+
+    <div class="rating-text">
+        <h3>Recenze:</h3>
+    </div>
+
     <div class="flex-column">
         @foreach (var item in Model.IndexRatings)
         {
             <div class="Rating">
-                <p>@item.Title</p>
-                <p>@item.Description</p>
-                 <p>Bodové ohodnocení: @item.Points/10</p>
-                
-                 
+                <p>
+                    @item.Title <br />
+                    @item.Description
+                </p>
+                <p>Bodové ohodnocení: @item.Points/10</p>
+
+
             </div>
         }
     </div>
