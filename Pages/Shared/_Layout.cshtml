@@ -7,23 +7,21 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <script src="https://kit.fontawesome.com/66f7fe13b6.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
 </head>
 <body>
     <header>
         <div class="title">Epický Coffee obchod</div>
         <div class="header-container">
             <a asp-area="" asp-page="/Index" >Domů</a>
-            <a asp-area="" asp-page="/AddCoffee" >Přidat kávu</a>
             <a asp-area="" asp-page="/CoffeeList" >Kávový List</a>           
-            
+            <a asp-area="" asp-page="/AddCoffee" >Přidat kávu</a>
         </div>
     </header>
 
     <div class="container">
-        <main role="main" id="swup" class="pb-3">
+        <main role="main" class="pb-3">
             @RenderBody()
-            <video autoplay muted loop id="background-video" class="transition-video">
+            <video autoplay muted loop id="background-video">
                 <source src="/videos/lofi-coffee-shop.mp4" type=video/mp4 />
             </video>
         </main>
