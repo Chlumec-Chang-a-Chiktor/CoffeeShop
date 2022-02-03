@@ -41,6 +41,7 @@ footer {
 /*buttons with mode*/
 .btn-modes {
     border: none;
+    border-radius: 5px;
 }
 /* Background lofi video*/
 #background-video {
