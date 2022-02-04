@@ -287,7 +287,7 @@ body {
 
 .transition-fade {
     opacity: 1;
-    transition: 500ms;
+    transition: 400ms;
 }
 
 html.is-animating .transition-fade {
@@ -296,7 +296,7 @@ html.is-animating .transition-fade {
 
 .transition-video {
     opacity: 1;
-    transition: 400ms;
+    transition: 300ms;
 }
 
 html.is-animating .transition-video {
@@ -305,7 +305,7 @@ html.is-animating .transition-video {
 
 .transition-swipe {
     transform: translateY(0);
-    transition: 700ms;
+    transition: 500ms;
 }
 
 
