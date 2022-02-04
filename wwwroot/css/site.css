@@ -237,10 +237,11 @@ body {
     background: rgba(18, 18, 18, 0.8);
 }
 .IngredientHolder{
-    width: 100%;
+    width: 25%;
     padding: 2%;
     display:flex;
     flex-direction:row;
+    margin:auto;
 }
 .IngredientHolder div {
     width: 33%;     

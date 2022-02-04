@@ -23,24 +23,24 @@
                     <div>
                         @for (int i = 0; i < Model.SelectedIng.Count / 3; i++)
                         {
-                            @Model.SelectedIng[i].Name<br />
+                        @Model.SelectedIng[i].Name<br />
                         }
                     </div>
                     <div>
-                        
+
                         @for (int i = 0 + Model.SelectedIng.Count / 3 * 2; i < Model.SelectedIng.Count; i++)
                         {
-                            @Model.SelectedIng[i].Name<br />
+                        @Model.SelectedIng[i].Name<br />
                         }
                     </div>
                     <div>
                         @for (int i = 0 + Model.SelectedIng.Count / 3; i < Model.SelectedIng.Count / 3 * 2; i++)
                         {
-                            @Model.SelectedIng[i].Name<br />
+                        @Model.SelectedIng[i].Name<br />
                         }
                     </div>
                 </div>
-                
+
 
             </div>
         </div>
@@ -67,26 +67,30 @@
         </form>
     </div>
 
+    @if(Model.IndexRatings.Count > 0)
+    {
     <div class="rating-text">
         <h3>Recenze:</h3>
     </div>
+    }
+
 
     <div class="flex-column">
         @foreach (var item in Model.IndexRatings)
         {
-            <div class="Rating">
-                <p>
-                    @item.Title <br />
-                    @item.Description
-                </p>
-                <p>Bodové ohodnocení: @item.Points/10</p>
+        <div class="Rating">
+            <p>
+                @item.Title <br />
+                @item.Description
+            </p>
+            <p>Bodové ohodnocení: @item.Points/10</p>
 
 
-            </div>
+        </div>
         }
     </div>
 </div>
 
-@section Scripts{ 
- <partial name="_ValidationScriptsPartial" />
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
 }
