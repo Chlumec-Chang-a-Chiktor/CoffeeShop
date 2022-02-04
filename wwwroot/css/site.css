@@ -224,15 +224,11 @@ body {
 
 .text, .rating-text {
     padding: 5px;
+    background: rgba(18, 18, 18, 0.8);
     border-radius: 10px;
-    -webkit-text-stroke-width: 0.5px;
-    -webkit-text-stroke-color: black;
     margin-top: 2%;
 }
-.text:hover {
-    background: rgba(18, 18, 18, 0.8);
-    transition: 1s;
-}
+
 
 .rating-text {
     background: rgba(18, 18, 18, 0.8);
