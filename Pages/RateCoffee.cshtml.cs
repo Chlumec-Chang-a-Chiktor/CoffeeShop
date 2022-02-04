@@ -15,6 +15,8 @@ namespace CoffeeShop.Pages
         [BindProperty]
         public Rating Rating { get; set; }
         public List<Rating> IndexRatings { get; set; }
+        public List<Ingredient> Ingredients { get; set; }
+        public List<SelectedIngredient> SelectedIng { get; set; }
         public RateCoffeeModel(AplicationDbContext db)
         {
             _db = db;
@@ -22,6 +24,12 @@ namespace CoffeeShop.Pages
         public void OnGet(int id)
         {
             Coffee = _db.Coffees.Find(id);
+            var ingredientName = from c in _db.CoffeIngredients
+                                 join sa in _db.Ingredients on c.IngredientId equals sa.Id
+                                 where c.CoffeeId == id
+                                 select new SelectedIngredient { Name = c.Ingredient.Name };
+
+            SelectedIng = ingredientName.ToList();
             IndexRatings = _db.Ratings.Where(x => x.Coffee.Id == id).ToList();
         }
         public IActionResult OnPost()
@@ -38,7 +46,11 @@ namespace CoffeeShop.Pages
             {
                 return Page();
             }
-            
+
         }
+    }
+    public class SelectedIngredient
+    {
+        public string Name { get; set; }
     }
 }

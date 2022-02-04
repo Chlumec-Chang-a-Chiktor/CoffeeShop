@@ -4,7 +4,15 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text  transition-fade">
+@if (TempData["Success"] != null)
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.success('@TempData["Success"]')
+    </script>
+}
+<div class="text">
     <h2 class="text-center">Kávová agentura s nekonečným prostorem pro kreativitu. <br> Zde má každé pořádné kafe řešení.</h2>
 </div>
 
