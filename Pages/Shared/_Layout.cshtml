@@ -16,7 +16,7 @@
         <div class="header-container">
             <a asp-area="" asp-page="/Index" >Domů</a>
             <a asp-area="" asp-page="/AddCoffee" >Přidat kávu</a>
-            <a asp-area="" asp-page="/CoffeeList" >Kávový List</a>           
+            <a asp-area="" asp-page="/CoffeeList" >Kávové menu</a>           
             
         </div>
     </header>
@@ -44,31 +44,6 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
-    <script>
-        let backgroundVideo = $("#background-video");
-        let hiddenBtn = $("#hiddenBtn");
-        let motionBtn = $("#motionBtn");
-
-        hiddenBtn.hide(0);
-
-        function StopMotion() {
-            backgroundVideo.get(0).pause();
-            hiddenBtn.show(0);
-            motionBtn.hide(0);
-        }
-
-        function StartMotion() {
-            backgroundVideo.get(0).play();
-            motionBtn.show(0);
-            hiddenBtn.hide(0);
-        }
-
-        function ZoomerMode() {
-            $("source").attr("src", "/videos/trolled.mp4");
-            $("video")[0].load(0);
-        }
-    </script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

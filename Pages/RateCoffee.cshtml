@@ -17,77 +17,81 @@
                     Popis: <br />
                     @RateCoffeeModel.Coffee.Description
                 </h5>
-                <h3>
-                    Přísady: <br />
-                </h3>
-                <div class="IngredientHolder">
-                    <div>
-                        @for (int i = 0; i < Model.SelectedIng.Count / 3; i++)
-                        {
-                        @Model.SelectedIng[i].Name<br />
-                        }
-                    </div>
-                    <div>
-
-                        @for (int i = 0 + Model.SelectedIng.Count / 3 * 2; i < Model.SelectedIng.Count; i++)
-                        {
-                        @Model.SelectedIng[i].Name<br />
-                        }
-                    </div>
-                    <div>
-                        @for (int i = 0 + Model.SelectedIng.Count / 3; i < Model.SelectedIng.Count / 3 * 2; i++)
-                        {
-                        @Model.SelectedIng[i].Name<br />
-                        }
-                    </div>
-                </div>
-
-
             </div>
         </div>
     </div><br />
 
-    <input type="submit" name="pickCoffee" value="Vybrat kávu" />
+    <form action="https://youtu.be/oHg5SJYRHA0" target="_blank">
+        <input type="submit" class="submit-coffee" name="pickCoffee" value="Vybrat kávu" />
+    </form>
+</div>
+<br />
 
-    <div>
-        <hr />
-        <div class="rating-text">
-            <h3>Ohodnoťte tuto kávu:</h3>
+<div class="rate-menu">
+    <button class="btn-menu" onclick="ShowIngredients()">Přísady</button>
+    <button class="btn-menu" onclick="ShowReview()">Recenze</button>
+    <button class="btn-menu" onclick="ShowForm()">Ohodnotit</button>
+</div>
+
+<div id="ingredient-box">
+    <div class="rating-text">
+        <h4>Přísady:</h4>
+        <div class="IngredientHolder">
+            @for (int i = 0; i < Model.SelectedIng.Count / 3; i++)
+            {
+                @Model.SelectedIng[i].Name<br />
+            }
+
+            @for (int i = 0 + Model.SelectedIng.Count / 3 * 2; i < Model.SelectedIng.Count; i++)
+            {
+                @Model.SelectedIng[i].Name<br />
+            }
+            @for (int i = 0 + Model.SelectedIng.Count / 3; i < Model.SelectedIng.Count / 3 * 2; i++)
+            {
+                @Model.SelectedIng[i].Name<br />
+            }
         </div>
+    </div>
+</div>
+
+<div id="rate-box">
+    <div class="rating-text">
+        <h4>Ohodnoťte tuto kávu:</h4>
+
         <form method="post" class="text-center">
-            <label>Nadpis</label><br />
+            <label>Jméno</label><br />
             <input type="text" asp-for="@Model.Rating.Title" /><br />
             <span class="text-danger" asp-validation-for="@Model.Rating.Title"></span><br />
-            <label> Váš Text</label><br />
+            <label>Hodnocení</label><br />
             <textarea asp-for="@Model.Rating.Description"></textarea><br />
             <span class="text-danger" asp-validation-for="@Model.Rating.Description"></span><br />
-            <label>Bodové ohodnocení</label><br />
+            <label>Bodové ohodnocení (0-10)</label><br />
             <input type="number" asp-for="@Model.Rating.Points" /><br />
             <span class="text-danger" asp-validation-for="@Model.Rating.Points"></span><br />
-            <input type="submit" /><br />
+            <input type="submit" class="submit-coffee" /><br />
         </form>
     </div>
+</div>
 
-    @if(Model.IndexRatings.Count > 0)
+<div id="review-box">
+    @if (Model.IndexRatings.Count > 0)
     {
-    <div class="rating-text">
-        <h3>Recenze:</h3>
-    </div>
+        <div class="rating-text">
+            <h4>Recenze:</h4>
+        </div>
     }
-
-
     <div class="flex-column">
         @foreach (var item in Model.IndexRatings)
         {
-        <div class="Rating">
-            <p>
-                @item.Title <br />
-                @item.Description
-            </p>
-            <p>Bodové ohodnocení: @item.Points/10</p>
+            <div class="Rating">
+                <p>
+                    @item.Title <br />
+                    @item.Description
+                </p>
+                <p>Bodové ohodnocení: @item.Points/10</p>
 
 
-        </div>
+            </div>
         }
     </div>
 </div>
@@ -95,3 +99,5 @@
 @section Scripts{
     <partial name="_ValidationScriptsPartial" />
 }
+
+
