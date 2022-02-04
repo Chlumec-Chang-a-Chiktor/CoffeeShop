@@ -39,11 +39,12 @@ namespace CoffeeShop.Pages
                 Rating.CoffeeId = Coffee.Id;
                 _db.Ratings.Add(Rating);
                 _db.SaveChanges();
-
+                TempData["Success"] = "Vaše Recenze Byla úspìšnì zveøejnìna!";
                 return RedirectToPage("RateCoffee", new { id = Coffee.Id });
             }
             else
             {
+                TempData["Error"] = "Musíte vyplnit všechny položky v formuláøi!";
                 return Page();
             }
 

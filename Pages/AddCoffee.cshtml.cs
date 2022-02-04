@@ -43,6 +43,7 @@ namespace CoffeeShop.Pages
             }
             else
             {
+                TempData["Error"] = "Jejda. nìco se nezdaøilo, prohlédnìte si pozornì formuláø";
                 return Page();
             }
 
