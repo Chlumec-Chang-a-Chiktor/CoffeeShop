@@ -236,3 +236,12 @@ body {
 .rating-text {
     background: rgba(18, 18, 18, 0.8);
 }
+.IngredientHolder{
+    width: 100%;
+    padding: 2%;
+    display:flex;
+    flex-direction:row;
+}
+.IngredientHolder div {
+    width: 33%;     
+}
