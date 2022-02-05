@@ -3,11 +3,11 @@
 @{
 }
 
-<div class="text transition-fade">
+<div class="text">
     <h1 class="text-center">List našich nadgalakticky výborných káv</h1>
 </div>
 
-<div class="CardHolder transition-swipe">
+<div class="CardHolder">
     @foreach (var item in Model.CoffeeList)
     {
         <a asp-page="RateCoffee" asp-route-id="@item.Id" class="CardRedirect text-center">

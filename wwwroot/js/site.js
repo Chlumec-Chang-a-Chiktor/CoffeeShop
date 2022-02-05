@@ -4,10 +4,7 @@
 // Write your JavaScript code.
 
 //swup - page transitions
-const options = {
-    cache: false
-};
-const swup = new Swup(options);
+
 
 
 

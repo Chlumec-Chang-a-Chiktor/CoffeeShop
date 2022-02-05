@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 
     <script src="https://kit.fontawesome.com/66f7fe13b6.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+
 
 
 
@@ -29,10 +29,10 @@
     </header>
 
     <div class="container">
-        <main role="main" id="swup" class="pb-3">
+        <main role="main" class="pb-3">
             @RenderBody()
             <img id="background-image" src="/Images/video-still.png" />
-            <video autoplay muted loop id="background-video" class="transition-video">
+            <video autoplay muted loop id="background-video">
                 <source src="/videos/lofi-coffee-shop.mp4" type=video/mp4 />
             </video>
         </main>
