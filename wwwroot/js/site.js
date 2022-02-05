@@ -9,8 +9,6 @@ let backgroundVideo = $("#background-video");
 let hiddenBtn = $("#hiddenBtn");
 let motionBtn = $("#motionBtn");
 
-hiddenBtn.hide(0);
-
 function StopMotion() {
     backgroundVideo.get(0).pause();
     hiddenBtn.show(0);
