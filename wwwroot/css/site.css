@@ -56,21 +56,30 @@ footer {
     border-radius: 5px;
     color: inherit;
     background: rgba(0, 0, 0, 0.5);
+    transition: 1s;
+}
+.btn-modes:hover, .btn-menu:hover {
+    background-color: black;
 }
 
-    .btn-modes:hover, .btn-menu:hover {
-        background-color: black;
-        transition: 1s;
-    }
-    /* Background lofi video*/
-    #background-video {
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        height: auto;
-        z-index: -1;
-    }
+
+/* Background lofi video*/
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
+#background-image {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -98,15 +107,17 @@ button.accept-policy {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
+
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-  font-family: Pop;
-  background-color: lightslategray;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    font-family: Pop;
+
+    background-color: lightslategray;
 }
 
 .container {
@@ -279,14 +290,14 @@ body {
 }*/
 
 @media (min-aspect-ratio: 16/9) {
-    #background-video {
+    #background-video, #background-image {
         width: 100%;
         height: auto;
     }
 }
 
 @media (max-aspect-ratio: 16/9) {
-    #background-video {
+    #background-video, #background-image {
         width: auto;
         height: 100%;
     }
@@ -311,7 +322,7 @@ html.is-animating .transition-fade {
 }
 
 html.is-animating .transition-video {
-    opacity: 0.4;
+    opacity: 0;
 }
 
 .transition-swipe {

@@ -7,10 +7,17 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+
     <script src="https://kit.fontawesome.com/66f7fe13b6.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
+    <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+
+
+
 </head>
 <body>
+
+
+
     <header>
         <div class="title">Epický Coffee obchod</div>
         <div class="header-container">
@@ -24,6 +31,7 @@
     <div class="container">
         <main role="main" id="swup" class="pb-3">
             @RenderBody()
+            <img id="background-image" src="/Images/video-still.png" />
             <video autoplay muted loop id="background-video" class="transition-video">
                 <source src="/videos/lofi-coffee-shop.mp4" type=video/mp4 />
             </video>
@@ -41,9 +49,11 @@
         </div>
     </footer>
 
+      
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
