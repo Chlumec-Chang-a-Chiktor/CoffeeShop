@@ -2,23 +2,33 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
-const swup = new Swup();
+
+//swup - page transitions
+const options = {
+    cache: false
+};
+const swup = new Swup(options);
+
+
+
 
 // Index
-let backgroundVideo = $("#background-video");
-let hiddenBtn = $("#hiddenBtn");
-let motionBtn = $("#motionBtn");
+//var backgroundVideo = $("#background-video");
+//var hiddenBtn = $("#hiddenBtn");
+//var motionBtn = $("#motionBtn");
+
+
 
 function StopMotion() {
-    backgroundVideo.get(0).pause();
-    hiddenBtn.show(0);
-    motionBtn.hide(0);
+    $("#background-video").get(0).pause();
+    $("#hiddenBtn").show(0);
+    $("#motionBtn").hide(0);
 }
 
 function StartMotion() {
-    backgroundVideo.get(0).play();
-    motionBtn.show(0);
-    hiddenBtn.hide(0);
+    $("#background-video").get(0).play();
+    $("#motionBtn").show(0);
+    $("#hiddenBtn").hide(0);
 }
 
 function ZoomerMode() {
@@ -27,21 +37,21 @@ function ZoomerMode() {
 }
 
 // Rate Coffee dzava skript
-let buttonParent = $(".bnt-menu");
-let rateBox = $("#rate-box");
-let reviewBox = $("#review-box");
-let ingredientsBox = $("#ingredient-box");
+const buttonParent = $(".bnt-menu");
+const rateBox = $("#rate-box");
+const reviewBox = $("#review-box");
+const ingredientsBox = $("#ingredient-box");
 let formclicks = true;
 let revclicks = true;
 let ingclicks = true;
 
 function ShowForm() {
     if (formclicks) {
-        rateBox.show(0);
         formclicks = false;
+        rateBox.show(0);
     } else {
-        rateBox.hide(0);
         formclicks = true;
+        rateBox.hide(0);
     }
 }
 
@@ -50,17 +60,21 @@ function ShowReview() {
         reviewBox.show(0);
         revclicks = false;
     } else {
-        reviewBox.hide(0);
         revclicks = true;
+        reviewBox.hide(0);
     }
 }
 
 function ShowIngredients() {
+    console.log("INGREDIENCE FUNGUJI");
     if (ingclicks) {
-        ingredientsBox.show(0);
+        console.log("ingclicks je true");
         ingclicks = false;
+        ingredientsBox.css("display", "block");
     } else {
-        ingredientsBox.hide(0);
+        console.log("ingclicks je false");
         ingclicks = true;
+        ingredientsBox.css("display", "none");
+
     }
 }
