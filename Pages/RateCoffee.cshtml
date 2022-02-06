@@ -2,98 +2,112 @@
 @model CoffeeShop.Pages.RateCoffeeModel
 @{
 }
-<partial name="_Notifications" />
-<div class="text-center flex-column">
-    <div class="flex-row">
-        <div>
-            <img src="~/Images/JavaCoffe.png" />
-        </div>
-        <div class="rating-text">
-            <div class="flex-column">
-                <h3>@RateCoffeeModel.Coffee.Name</h3>
-            </div>
+@if (RateCoffeeModel.Coffee != null)
+{
+    <partial name="_Notifications" />
+    <div class="text-center flex-column">
+        <div class="flex-row">
             <div>
-                <h5>
-                    Popis: <br />
-                    @RateCoffeeModel.Coffee.Description
-                </h5>
+                <img src="~/Images/JavaCoffe.png" />
             </div>
-        </div>
-    </div><br />
+            <div class="rating-text">
+                <div class="flex-column">
+                    <h3>@RateCoffeeModel.Coffee.Name</h3>
+                </div>
+                <div>
+                    <h5 class="text-break">
+                        Popis: <br />
+                        @RateCoffeeModel.Coffee.Description
+                    </h5>
+                </div>
+            </div>
+        </div><br />
 
-    <form action="https://youtu.be/oHg5SJYRHA0" target="_blank">
-        <input type="submit" class="submit-coffee" name="pickCoffee" value="Vybrat kávu" />
-    </form>
-</div>
-<br />
+        <form action="https://youtu.be/oHg5SJYRHA0" target="_blank">
+            <input type="submit" class="submit-coffee" name="pickCoffee" value="Vybrat kávu" />
+        </form>
+    </div>
+    <br />
 
-<div class="rate-menu">
-    <button class="btn-menu" onclick="ShowIngredients()">Přísady</button>
-    <button class="btn-menu" onclick="ShowReview()">Recenze</button>
-    <button class="btn-menu" onclick="ShowForm()">Ohodnotit</button>
-</div>
+    <div class="rate-menu">
+        <button class="btn-menu" onclick="ShowIngredients()">Přísady</button>
+        <button class="btn-menu" onclick="ShowReview()">Recenze</button>
+        <button class="btn-menu" onclick="ShowForm()">Ohodnotit</button>
+    </div>
 
-<div id="ingredient-box">
-    <div class="rating-text">
-        <h4>Přísady:</h4>
-        <div class="IngredientHolder">
-            @for (int i = 0; i < Model.SelectedIng.Count; i++)
+    <div id="ingredient-box">
+        <div class="rating-text">
+            @if (Model.SelectedIng.Count != 0)
             {
-                @Model.SelectedIng[i].Name<br />
+                <h4>Přísady:</h4>
+                <div class="IngredientHolder">
+                    @for (int i = 0; i < Model.SelectedIng.Count; i++)
+                    {
+                        @Model.SelectedIng[i].Name<br />
+                    }
+                </div>
+            }
+            else
+            {
+                <h4>Tato káva nemá žádné přísady, doslova prázdná sklenička</h4>
+            }
+
+        </div>
+    </div>
+
+    <div id="rate-box">
+        <div class="rating-text">
+            <h4>Ohodnoťte tuto kávu:</h4>
+
+            <form method="post" class="text-center">
+                <label>Jméno</label><br />
+                <input type="text" asp-for="@Model.Rating.Title" /><br />
+                <span class="text-danger" asp-validation-for="@Model.Rating.Title"></span><br />
+                <label>Hodnocení</label><br />
+                <textarea asp-for="@Model.Rating.Description"></textarea><br />
+                <span class="text-danger" asp-validation-for="@Model.Rating.Description"></span><br />
+                <label>Bodové ohodnocení (0-10)</label><br />
+                <input type="number" asp-for="@Model.Rating.Points" /><br />
+                <span class="text-danger" asp-validation-for="@Model.Rating.Points"></span><br />
+                <input type="submit" class="submit-coffee" /><br />
+            </form>
+        </div>
+    </div>
+
+    <div id="review-box">
+        @if (Model.IndexRatings.Count > 0)
+        {
+            <div class="rating-text">
+                <h4>Recenze:</h4>
+            </div>}
+        else
+        {
+            <div class="rating-text">
+                <h4>Zatím žádné recenze...</h4>
+            </div>
+        }
+        <div class="flex-column">
+            @foreach (var item in Model.IndexRatings)
+            {
+                <div class="Rating">
+                    <p>
+                        @item.Title <br />
+                        @item.Description
+                    </p>
+                    <p>Bodové ohodnocení: @item.Points/10</p>
+                </div>
             }
         </div>
     </div>
-</div>
 
-<div id="rate-box">
-    <div class="rating-text">
-        <h4>Ohodnoťte tuto kávu:</h4>
-
-        <form method="post" class="text-center">
-            <label>Jméno</label><br />
-            <input type="text" asp-for="@Model.Rating.Title" /><br />
-            <span class="text-danger" asp-validation-for="@Model.Rating.Title"></span><br />
-            <label>Hodnocení</label><br />
-            <textarea asp-for="@Model.Rating.Description"></textarea><br />
-            <span class="text-danger" asp-validation-for="@Model.Rating.Description"></span><br />
-            <label>Bodové ohodnocení (0-10)</label><br />
-            <input type="number" asp-for="@Model.Rating.Points" /><br />
-            <span class="text-danger" asp-validation-for="@Model.Rating.Points"></span><br />
-            <input type="submit" class="submit-coffee" /><br />
-        </form>
-    </div>
-</div>
-
-<div id="review-box">
-    @if (Model.IndexRatings.Count > 0)
-    {
-
-
-        <div class="rating-text">
-            <h4>Recenze:</h4>
-        </div>}
-    else
-    {
-        <div class="rating-text">
-            <h4>Zatím žádné recenze...</h4>
-        </div>
+    @section Scripts{
+        <partial name="_ValidationScriptsPartial" />
     }
-    <div class="flex-column">
-        @foreach (var item in Model.IndexRatings)
-        {
-            <div class="Rating">
-                <p>
-                    @item.Title <br />
-                    @item.Description
-                </p>
-                <p>Bodové ohodnocení: @item.Points/10</p>
-            </div>
-        }
-    </div>
-</div>
-
-@section Scripts{
-    <partial name="_ValidationScriptsPartial" />
 }
+else
+{
+    <h1>Káva nenalezena....</h1>
+}
+
 
 
