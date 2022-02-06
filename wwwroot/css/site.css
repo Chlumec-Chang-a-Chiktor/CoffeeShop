@@ -146,13 +146,55 @@ body {
     height: 200px;
 }
 
-.bg-success, .submit-coffee {
+
+/*.bg-success, .submit-coffee {
     width: 30%;
     height: 40px;
     border-radius: 5px;
     color: white;
     border: none;
-    background-color: rgb(40, 167, 69);
+    background-color: pink;
+}*/
+
+
+
+
+.submit-coffee {
+    display: inline-block;
+    padding: 0.9rem 1.8rem;
+    font-size: 16px;
+    /*font-weight: 700;*/
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    font-family: inherit;
+}
+
+.submit-coffee:hover{
+    /*color: black;*/
+}
+
+.submit-coffee::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 110%;
+    height: 110%;
+    background-color: rgba(64,127,197,0.7);
+    transform: translateX(-100%);
+    transition: all .3s;
+    z-index: -1;
+}
+
+.submit-coffee:hover::before {
+    transform: translateX(0);
 }
 
 /* Coffee rate menu*/
@@ -163,7 +205,79 @@ body {
 }
 .btn-menu {
     margin-left: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
 }
+
+/* Customize the label (the container) */
+.add-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.add-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+/* On mouse-over, add a grey background color */
+.add-container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.add-container input:checked ~ .checkmark {
+    background-color: rgba(64,127,197,0.7);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.add-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.add-container .checkmark:after {
+    left: 9.5px;
+    top: 5.5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
 /* CARDS. */
 .CardHolder {
     /*-webkit-box-shadow: 0px 0px 0px 8px #000000, 0px 0px 0px 16px #4B4C4B, 0px 0px 0px 24px #828482, 0px 0px 0px 31px #B2B5B2, 0px 0px 0px 39px #DADDDA, -6px 5px 5px 2px rgba(0,0,0,0);*/
@@ -261,6 +375,25 @@ body {
     width: 33%;
 }
 
+.add-label{
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+/*.rating-rating{
+    font-style: italic;
+}*/
+.rating-title {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+/*.add-label label{
+    font: italic;
+}*/
+
+
+
 /* MEDIA RESPONSIVE SHITS AND STUFF ----------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------*/
 
@@ -326,7 +459,7 @@ body {
     }
 }
 
-.text,{
+.text{
     animation: transition-fade 500ms;
 }
 .CardHolder, .rating-text, .btn-menu, submit.submit-coffee, .AddForm {
