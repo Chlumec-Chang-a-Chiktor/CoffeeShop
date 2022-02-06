@@ -329,6 +329,9 @@ html.is-animating .transition-video {
     transform: translateY(0);
     transition: 500ms;
 }
+.IngredientAlighner{
+    text-align:left;
+}
 
 
 html.is-animating .transition-swipe {
