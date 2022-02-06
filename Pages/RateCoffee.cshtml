@@ -12,7 +12,7 @@
             </div>
             <div class="rating-text">
                 <div class="flex-column">
-                    <h3>@RateCoffeeModel.Coffee.Name</h3>
+                    <h3 style="font-weight:bold">@RateCoffeeModel.Coffee.Name</h3>
                 </div>
                 <div>
                     <h5 class="text-break">
@@ -24,7 +24,7 @@
         </div><br />
 
         <form action="https://youtu.be/oHg5SJYRHA0" target="_blank">
-            <input type="submit" class="submit-coffee" name="pickCoffee" value="Vybrat kávu" />
+            <button type="submit" class="submit-coffee" name="pickCoffee">Vybrat kávu</button>
         </form>
     </div>
     <br />
@@ -72,10 +72,11 @@
             {
                 <div class="Rating">
                     <p>
-                        @item.Title <br />
+                        <span class="rating-title">@item.Title</span> <br />
+
                         @item.Description
                     </p>
-                    <p>Bodové ohodnocení: @item.Points/10</p>
+                    <p class="rating-rating">Bodové ohodnocení: @item.Points/10</p>
                 </div>
             }
         </div>
@@ -95,7 +96,8 @@
                 <label>Bodové ohodnocení (0-10)</label><br />
                 <input type="number" asp-for="@Model.Rating.Points" /><br />
                 <span class="text-danger" asp-validation-for="@Model.Rating.Points"></span><br />
-                <input type="submit" class="submit-coffee" /><br />
+
+                <button type="submit" class="submit-coffee"> Odelsat </button>
             </form>
         </div>
     </div>
