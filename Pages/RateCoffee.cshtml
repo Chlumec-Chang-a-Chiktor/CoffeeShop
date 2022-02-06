@@ -55,25 +55,6 @@
         </div>
     </div>
 
-    <div id="rate-box">
-        <div class="rating-text">
-            <h4>Ohodnoťte tuto kávu:</h4>
-
-            <form method="post" class="text-center">
-                <label>Jméno</label><br />
-                <input type="text" asp-for="@Model.Rating.Title" /><br />
-                <span class="text-danger" asp-validation-for="@Model.Rating.Title"></span><br />
-                <label>Hodnocení</label><br />
-                <textarea asp-for="@Model.Rating.Description"></textarea><br />
-                <span class="text-danger" asp-validation-for="@Model.Rating.Description"></span><br />
-                <label>Bodové ohodnocení (0-10)</label><br />
-                <input type="number" asp-for="@Model.Rating.Points" /><br />
-                <span class="text-danger" asp-validation-for="@Model.Rating.Points"></span><br />
-                <input type="submit" class="submit-coffee" /><br />
-            </form>
-        </div>
-    </div>
-
     <div id="review-box">
         @if (Model.IndexRatings.Count > 0)
         {
@@ -99,6 +80,27 @@
             }
         </div>
     </div>
+
+    <div id="rate-box">
+        <div class="rating-text">
+            <h4>Ohodnoťte tuto kávu:</h4>
+
+            <form method="post" class="text-center">
+                <label>Jméno</label><br />
+                <input type="text" asp-for="@Model.Rating.Title" /><br />
+                <span class="text-danger" asp-validation-for="@Model.Rating.Title"></span><br />
+                <label>Hodnocení</label><br />
+                <textarea asp-for="@Model.Rating.Description"></textarea><br />
+                <span class="text-danger" asp-validation-for="@Model.Rating.Description"></span><br />
+                <label>Bodové ohodnocení (0-10)</label><br />
+                <input type="number" asp-for="@Model.Rating.Points" /><br />
+                <span class="text-danger" asp-validation-for="@Model.Rating.Points"></span><br />
+                <input type="submit" class="submit-coffee" /><br />
+            </form>
+        </div>
+    </div>
+
+
 
     @section Scripts{
         <partial name="_ValidationScriptsPartial" />
