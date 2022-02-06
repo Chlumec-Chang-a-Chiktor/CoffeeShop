@@ -63,13 +63,10 @@ function ShowReview() {
 }
 
 function ShowIngredients() {
-    console.log("INGREDIENCE FUNGUJI");
     if (ingclicks) {
-        console.log("ingclicks je true");
         ingclicks = false;
         ingredientsBox.css("display", "block");
     } else {
-        console.log("ingclicks je false");
         ingclicks = true;
         ingredientsBox.css("display", "none");
 
